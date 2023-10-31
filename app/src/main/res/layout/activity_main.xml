@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#303030">
+
+    <!-- Floating TextView -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/title_gradient_background"
+        android:drawableStart="@drawable/icon"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:elevation="4dp" />
+
+    <!-- Floating LinearLayout -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTextView"
+        android:layout_marginStart="40dp"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:visibility="visible">
+
+        <!-- Contents of the LinearLayout go here -->
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/serviceStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מצב השירות: בבדיקה..."
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/overlayPermissionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מצב הרשאה נדרשת: בבדיקה..."
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_below="@+id/serviceStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/batteryOptimizationStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Optimization Status: Checking..."
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_below="@+id/overlayPermissionStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp" />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/batteryOptimizationStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="בדיקה" />
+</RelativeLayout>

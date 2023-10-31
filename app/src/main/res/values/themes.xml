@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.RedAlert" parent="Theme.AppCompat.Light.DarkActionBar" />
+</resources>

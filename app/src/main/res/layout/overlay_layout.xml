@@ -2,26 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:elevation="5dp"
-    >
+    android:elevation="5dp">
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="0dp"
         android:background="@drawable/title_gradient_background"
         android:drawableStart="@drawable/icon"
         android:drawablePadding="8dp"
+        android:focusable="false"
         android:gravity="center"
         android:padding="10dp"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold"
-       />
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -29,8 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleTextView"
-        android:orientation="horizontal"
         android:layout_marginStart="40dp"
-   />
+        android:focusable="false"
+        android:orientation="horizontal" />
 
 </RelativeLayout>

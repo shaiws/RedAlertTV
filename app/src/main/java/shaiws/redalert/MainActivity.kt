@@ -66,8 +66,13 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("אוקי") { dialog, _ -> dialog.dismiss() }
                     .show()
                 displayListInApp(
-                    "זוהי בדיקה",
-                    listOf("זוהי בדיקה 1", "זוהי בדיקה 2", "זוהי בדיקה 3")
+                    "זוהי בדיקה               ",
+                    listOf(
+                        "זוהי בדיקה 1",
+                        "זוהי בדיקה 2",
+                        "זוהי בדיקה 3",
+                        "ליעילות מיטבית יש לאשר את ההרשאות הנדרשות"
+                    )
                 )
 
             } else {
@@ -76,6 +81,8 @@ class MainActivity : AppCompatActivity() {
                 startService(intent)
             }
         }
+        testButton.requestFocus()
+
         val fromOverlayService = intent.getBooleanExtra("fromOverlayService", false)
         Log.d("MainActivity", "fromOverlayService: $fromOverlayService")
         if (fromOverlayService) {
@@ -192,7 +199,7 @@ class MainActivity : AppCompatActivity() {
         val fromOverlayService = intent.getBooleanExtra("fromOverlayService", false)
         Log.d("MainActivity", "fromOverlayService: $fromOverlayService")
         if (fromOverlayService) {
-            listDisplayDuration+= 1000L
+            listDisplayDuration += 1000L
             val title = intent.getStringExtra("title")
             val items = intent.getStringArrayExtra("items")?.toList()
             displayListInApp(title, items)

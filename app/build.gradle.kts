@@ -13,8 +13,8 @@ android {
         applicationId = "shaiws.redalert"
         minSdk = 26
         targetSdk = 33
-        versionCode = 5
-        versionName = "1.0.4"
+        versionCode = 7
+        versionName = "1.0.6"
 
     }
 

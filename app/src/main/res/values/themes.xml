@@ -1,4 +1,10 @@
 <resources>
 
-    <style name="Theme.RedAlert" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="Theme.RedAlert" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Set fullscreen mode -->
+        <item name="android:windowFullscreen">true</item>
+
+
+    </style>
+
 </resources>

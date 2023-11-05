@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Tzeva Adom alerts (Red Alerts)</string>
+    <string name="statusTab">Service status</string>
+    <string name="testTab">Test</string>
+    <string name="langTab">Language</string>
+    <string name="serviceTesting">Service status: Checking...</string>
+    <string name="permissionTesting">Permission status: Checking...</string>
+    <string name="batteryTesting">Energy optimization status: Checking...</string>
+    <string name="langSelect">Choose language</string>
+    <string name="activeService">Service status: active</string>
+    <string name="deactiveService">Service status: inactive</string>
+    <string name="grantedPermissions">Permission to appear above apps: disabled</string>
+    <string name="deactiveBattery">Energy optimization: disabled</string>
+    <string name="activeBattery">Power consumption optimization: enabled</string>
+    <string name="serviceActive">The service is active</string>
+    <string name="serviceDeactive">The service is inactive</string>
+    <string name="overlayGranted">Permission to appear on top of other windows has been granted</string>
+    <string name="overlayDenied">Permission to appear on top of other windows has not been granted</string>
+    <string name="deniedPermissions">Permission to appear above apps: enabled</string>
+    <string name="thisIsATest">This is a test</string>
+    <string name="test1">This is test number 1</string>
+    <string name="test2">This is test number 2</string>
+    <string name="test3">This is test number 3</string>
+    <string name="bestIsToActivePer">For optimal performance, grant the necessary permissions</string>
+    <string name="permissinoTitle">Permission to appear on top of other windows</string>
+    <string name="permissionMessage">In order to display notifications, the app requires permission to appear on top of other windows. Please go to device settings under\n\'Apps\' -> \'Special app access\' -> \'Display above other apps\'\nand confirm the permission.\nAfter that, restart the app.</string>
+    <string name="ok">Ok</string>
+    <string name="batteryTitle">Permission for battery optimizations</string>
+    <string name="batteryMessage">In order to receive real-time notifications, the app requires permission to ignore battery optimizations. Please go to device settings under\n\'Apps\' -> \'Special App Access\' -> \'Energy Optimization\'\nand turn off the option.\nAfter that, restart the app.</string>
+    <string name="defTitle">Firing rockets and missiles</string>
+</resources>

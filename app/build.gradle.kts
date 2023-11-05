@@ -11,10 +11,10 @@ android {
     }
     defaultConfig {
         applicationId = "shaiws.redalert"
-        minSdk = 26
+        minSdk = 28
         targetSdk = 33
-        versionCode = 7
-        versionName = "1.0.6"
+        versionCode = 10
+        versionName = "1.0.0.2"
 
     }
 
@@ -42,4 +42,9 @@ dependencies {
     implementation("androidx.leanback:leanback:1.0.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation ("com.squareup.okhttp3:okhttp:5.0.0-alpha.11")
+     implementation ("com.google.android.material:material:1.10.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.2.0")
+    implementation("com.android.car.ui:car-ui-lib:2.5.1")
+
+
 }

@@ -4,9 +4,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
-import android.content.Context
 import android.content.Intent
-import android.content.pm.ApplicationInfo
 import android.graphics.Color
 import android.os.Build
 import android.os.Handler
@@ -16,7 +14,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.graphics.PixelFormat
-import android.graphics.Point
 import android.graphics.Typeface
 import android.provider.Settings
 import android.util.Log
@@ -46,7 +43,7 @@ class OverlayService : Service() {
 
 
     private val host: String =
-        if (BuildConfig.DEBUG) "http://192.168.1.49:1337" else "https://www.oref.org.il"
+        if (BuildConfig.DEBUG) "http://192.168.1.40:1337" else "https://www.oref.org.il"
 
     override fun onBind(intent: Intent): IBinder? {
         return null
@@ -123,6 +120,12 @@ class OverlayService : Service() {
                         for (j in startIndex until endIndex) {
                             val itemTextView = TextView(this@OverlayService)
                             itemTextView.text = items[j]
+                            itemTextView.setShadowLayer(
+                                1.5f,
+                                0f,
+                                1f,
+                                Color.BLACK
+                            )
                             itemTextView.setTextColor(Color.WHITE)
                             itemTextView.setBackgroundResource(R.drawable.gradient_background)
                             itemTextView.textSize = 16f
@@ -265,8 +268,12 @@ class OverlayService : Service() {
         when (intent?.action) {
             ACTION_DISPLAY_DUMMY -> {
                 // Add dummy data to items list and display
-                items = listOf("בדיקה 1", "בדיקה 2", "בדיקה 3") // Your dummy data
-                modalTitle = "זוהי בדיקה"
+                items = listOf(
+                    resources.getString(R.string.test1),
+                    resources.getString(R.string.test2),
+                    resources.getString(R.string.test3),
+                )
+                modalTitle = resources.getString(R.string.thisIsATest)
 
                 // You can directly call `displayOrUpdateOverlay` since you have dummy data
                 val params = WindowManager.LayoutParams(

@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">התרעות צבע אדום</string>
+    <string name="app_name">התראות צבע אדום</string>
+    <string name="statusTab">סטטוס שרות</string>
+    <string name="testTab">בדיקה</string>
+    <string name="langTab">שפה</string>
+    <string name="serviceTesting">מצב שירות: בודק...</string>
+    <string name="permissionTesting">סטטוס הרשאה: בודק...</string>
+    <string name="batteryTesting">מצב אופטימיזציית אנרגיה: בודק...</string>
+    <string name="langSelect">בחר שפה</string>
+    <string name="activeService">מצב השירות: פעיל</string>
+    <string name="deactiveService">מצב השירות: לא פעיל</string>
+    <string name="grantedPermissions">הרשאה להופיע מעל אפליקציות: לא מופעלת</string>
+    <string name="deactiveBattery">אופטימיזציה של צריכת אנרגיה: לא מופעלת</string>
+    <string name="activeBattery">אופטימיזציה של צריכת אנרגיה: מופעלת</string>
+    <string name="serviceActive">השירות פעיל</string>
+    <string name="serviceDeactive">השירות לא פעיל</string>
+    <string name="overlayGranted">הרשאה להופיע מעל חלונות אחרים ניתנה</string>
+    <string name="overlayDenied">הרשאה להופיע מעל חלונות אחרים לא ניתנה</string>
+    <string name="deniedPermissions">הרשאה להופיע מעל אפליקציות: מופעלת</string>
+    <string name="thisIsATest">זוהי בדיקה</string>
+    <string name="test1">זוהי בדיקה 1</string>
+    <string name="test2">זוהי בדיקה 2</string>
+    <string name="test3">זוהי בדיקה 3</string>
+    <string name="bestIsToActivePer">ליעילות מיטבית יש לאשר את ההרשאות הנדרשות</string>
+    <string name="permissinoTitle">הרשאה להופיע מעל חלונות אחרים</string>
+    <string name="permissionMessage">בכדי להציג התראות, האפליקציה דורשת הרשאה להופיע מעל חלונות אחרים. אנא עבור להגדרות המכשיר תחת\n\'אפליקציות\' -> \'גישה מיוחדת לאפליקציה\' -> \'תצוגה מעל אפליקציות אחרות\'\nואשר את ההרשאה.\nלאחר מכן, הפעל את האפליקציה מחדש.</string>
+    <string name="ok">אוקי</string>
+    <string name="batteryTitle">הרשאה לאופטימיזציות סוללה</string>
+    <string name="batteryMessage">בכדי לקבל התראות בזמן אמת, האפליקציה דורשת הרשאה להתעלם מאופטימיזציות סוללה. אנא עבור להגדרות המכשיר תחת\n\'אפליקציות\' -> \'גישה מיוחדת לאפליקציה\' -> \'אופטימיזציה של צריכת אנרגיה\'\nוכבה את האפשרות.\nלאחר מכן, הפעל את האפליקציה מחדש.</string>
+    <string name="defTitle">ירי רקטות וטילים</string>
 </resources>

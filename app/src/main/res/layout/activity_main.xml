@@ -1,102 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#303030"
+    android:background="#2E2E2E"
+    android:nextFocusLeft="@string/statusTab"
+    android:nextFocusRight="@string/statusTab"
+    android:nextFocusUp="@string/statusTab"
+    android:nextFocusDown="@string/statusTab"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/title_gradient_background"
-        android:drawableStart="@drawable/icon"
-        android:drawablePadding="8dp"
-        android:elevation="4dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:focusable="false"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        android:textStyle="bold"
-        android:visibility="gone" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF5722"
+            app:tabIndicatorColor="#FFFFFF"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabTextColor="#BDBDBD">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/statusTab" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/testTab" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/langTab" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#424242"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/title_gradient_background"
+                android:drawableStart="@drawable/icon"
+                android:drawablePadding="8dp"
+                android:elevation="4dp"
+                android:focusable="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleTextView"
+                android:layout_marginStart="40dp"
+                android:elevation="4dp"
+                android:focusable="false"
+                android:orientation="horizontal"
+
+                android:visibility="visible">
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/serviceStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp"
+                android:focusable="false"
+                android:padding="12dp"
+                android:text="@string/serviceTesting"
+                android:textColor="#FF5722"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/overlayPermissionStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/serviceStatus"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp"
+                android:focusable="false"
+                android:padding="12dp"
+                android:text="@string/permissionTesting"
+                android:textColor="#FF5722"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/batteryOptimizationStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/overlayPermissionStatus"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp"
+                android:focusable="false"
+                android:padding="12dp"
+                android:text="@string/batteryTesting"
+                android:textColor="#FF5722"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/titleTextView"
-        android:layout_marginStart="40dp"
-        android:elevation="4dp"
-        android:orientation="horizontal"
-        android:focusable="false"
+        android:id="@+id/nav_view"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FF5722"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        android:visibility="visible">
+        <!-- Drawer Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="@string/langSelect"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
+        <!-- Language Options -->
+        <RadioGroup
+            android:id="@+id/languageRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <RadioButton
+                android:id="@+id/radioHebrew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="עברית"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/radioEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/radioRussian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Русский"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/radioArabic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="العربية"
+                android:textColor="#FFFFFF" />
+
+
+
+        </RadioGroup>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/serviceStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:elevation="4dp"
-        android:padding="12dp"
-        android:text="מצב השירות: בבדיקה..."
-        android:textColor="#FFFFFF"
-        android:focusable="false"
-
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/overlayPermissionStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/serviceStatus"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:elevation="4dp"
-        android:padding="12dp"
-        android:text="מצב הרשאה נדרשת: בבדיקה..."
-        android:textColor="#FFFFFF"
-        android:focusable="false"
-
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/batteryOptimizationStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/overlayPermissionStatus"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:elevation="4dp"
-        android:padding="12dp"
-        android:text="Optimization Status: Checking..."
-        android:textColor="#FFFFFF"
-        android:focusable="false"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/batteryOptimizationStatus"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:focusable="true"
-        android:nextFocusDown="@id/testButton"
-        android:nextFocusLeft="@id/testButton"
-        android:nextFocusRight="@id/testButton"
-        android:nextFocusUp="@id/testButton"
-        android:text="בדיקה" />
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

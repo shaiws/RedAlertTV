@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">تنبيهات اللون الأحمر</string>
+    <string name="statusTab">حالة الخدمة</string>
+    <string name="testTab">يفحص</string>
+    <string name="langTab">لغة</string>
+    <string name="serviceTesting">حالة الخدمة: جارٍ التحقق...</string>
+    <string name="permissionTesting">حالة الإذن: جارٍ التحقق...</string>
+    <string name="batteryTesting">حالة تحسين الطاقة: جارٍ التحقق...</string>
+    <string name="langSelect">اختر اللغة</string>
+    <string name="activeService">حالة الخدمة: نشطة</string>
+    <string name="deactiveService">حالة الخدمة: غير نشطة</string>
+    <string name="grantedPermissions">إذن الظهور فوق التطبيقات: معطل</string>
+    <string name="deactiveBattery">تحسين الطاقة: معطل</string>
+    <string name="activeBattery">تحسين استهلاك الطاقة: ممكّن</string>
+    <string name="serviceActive">الخدمة نشطة</string>
+    <string name="serviceDeactive">الخدمة غير نشطة</string>
+    <string name="overlayGranted">تم منح الإذن بالظهور فوق النوافذ الأخرى</string>
+    <string name="overlayDenied">لم يتم منح الإذن بالظهور فوق النوافذ الأخرى</string>
+    <string name="deniedPermissions">إذن الظهور فوق التطبيقات: ممكّن</string>
+    <string name="thisIsATest">هذا اختبار</string>
+    <string name="test1">هذا هو الاختبار رقم 1</string>
+    <string name="test2">هذا هو الاختبار رقم 2</string>
+    <string name="test3">هذا هو الاختبار رقم 3</string>
+    <string name="bestIsToActivePer">للحصول على الأداء الأمثل، امنح الأذونات اللازمة</string>
+    <string name="permissinoTitle">الإذن بالظهور فوق النوافذ الأخرى</string>
+    <string name="permissionMessage">لكي يتم عرض الإشعارات، يتطلب التطبيق إذنًا للظهور فوق النوافذ الأخرى. يرجى الانتقال إلى إعدادات الجهاز ضمن\n\'التطبيقات\' -> \'الوصول إلى التطبيقات الخاصة\' -> \'العرض فوق التطبيقات الأخرى\'\nوتأكيد الإذن.\nبعد ذلك، أعد تشغيل التطبيق.</string>
+    <string name="ok">حسنًا</string>
+    <string name="batteryTitle">إذن لتحسين البطارية</string>
+    <string name="batteryMessage">من أجل تلقي إشعارات في الوقت الفعلي، يتطلب التطبيق إذنًا لتجاهل تحسينات البطارية. يرجى الانتقال إلى إعدادات الجهاز ضمن\n\'التطبيقات\' -> \'الوصول إلى التطبيقات الخاصة\' -> \'تحسين الطاقة\'\nوإيقاف تشغيل الخيار.\nبعد ذلك، أعد تشغيل التطبيق.</string>
+    <string name="defTitle">إطلاق الصواريخ والقذائف</string>
+</resources>

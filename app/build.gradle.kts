@@ -13,8 +13,9 @@ android {
         applicationId = "shaiws.redalert"
         minSdk = 28
         targetSdk = 33
-        versionCode = 10
-        versionName = "1.0.0.2"
+        versionCode = 12
+        versionName = "1.1.1"
+        proguardFiles()
 
     }
 

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Оповещения Цева Адом (Red Alerts)</string>
+    <string name="statusTab">Статус услуги</string>
+    <string name="testTab">Тест</string>
+    <string name="langTab">Язык</string>
+    <string name="serviceTesting">Статус услуги: Проверка...</string>
+    <string name="permissionTesting">Статус разрешения: Проверка...</string>
+    <string name="batteryTesting">Статус оптимизации энергопотребления: Проверка...</string>
+    <string name="langSelect">Выберите язык</string>
+    <string name="activeService">Статус услуги: Активный</string>
+    <string name="deactiveService">Статус услуги: неактивен</string>
+    <string name="grantedPermissions">Разрешение появляться над приложениями: не включено</string>
+    <string name="deactiveBattery">Оптимизация энергопотребления: не включено</string>
+    <string name="activeBattery">Оптимизация энергопотребления: включено</string>
+    <string name="serviceActive">Услуга активна</string>
+    <string name="serviceDeactive">Услуга не активна</string>
+    <string name="overlayGranted">Разрешение на показ поверх других окон предоставлено.</string>
+    <string name="overlayDenied">Разрешение на появление поверх других окон не предоставлено.</string>
+    <string name="deniedPermissions">Разрешение появляться над приложениями: включено.</string>
+    <string name="thisIsATest">Это тест</string>
+    <string name="test1">Это тест №1</string>
+    <string name="test2">Это тест №2</string>
+    <string name="test3">Это тест №3</string>
+    <string name="bestIsToActivePer">Для оптимальной эффективности предоставьте необходимые разрешения</string>
+    <string name="permissinoTitle">Разрешение появляться поверх других окон</string>
+    <string name="permissionMessage">Для отображения уведомлений приложению требуется разрешение на появление поверх других окон. Перейдите в настройки устройства в разделе\n\'Приложения\' -> \'Доступ к специальным приложениям\' -> \'Отображать над другими приложениями\'\n и подтвердите разрешение.\nПосле этого перезапустите приложение.</string>
+    <string name="ok">ОК</string>
+    <string name="batteryTitle">Разрешение на оптимизацию батареи</string>
+    <string name="batteryMessage">Чтобы получать уведомления в реальном времени, приложению требуется разрешение игнорировать оптимизацию батареи. Перейдите в настройки устройства в разделе\n\'Приложения\' ->\'Специальный доступ к приложениям\' ->\'Оптимизация энергопотребления\'\n и отключите эту опцию.\nПосле этого перезапустите приложение.</string>
+    <string name="defTitle">Стрельба ракетами и ракетами</string>
+</resources>

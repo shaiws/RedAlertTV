@@ -1,4 +1,4 @@
-package shaiws.redalert
+package com.shaiws.redalert
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -26,6 +26,7 @@ import androidx.core.app.NotificationCompat
 import okhttp3.*
 import org.json.JSONException
 import org.json.JSONObject
+import com.shaiws.redalert.BuildConfig
 import java.io.IOException
 
 class OverlayService : Service() {

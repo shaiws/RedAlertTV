@@ -22,10 +22,12 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FF0000"
+            android:background="@android:color/holo_red_dark"
             app:tabIndicatorColor="#FFFFFF"
-            app:tabSelectedTextColor="#FFFFFF"
-            app:tabTextColor="#BDBDBD">
+            app:tabTextColor="#FFFFFF"
+            app:tabSelectedTextColor="#000000"
+            app:tabBackground="@drawable/tab_background_selector"
+            >
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabStatus"

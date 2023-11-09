@@ -4,17 +4,17 @@ plugins {
 }
 
 android {
-    namespace = "shaiws.redalert"
+    namespace = "com.shaiws.redalert"
     compileSdk = 34
     buildFeatures {
         buildConfig = true
     }
     defaultConfig {
-        applicationId = "shaiws.redalert"
+        applicationId = "com.shaiws.redalert"
         minSdk = 28
         targetSdk = 33
-        versionCode = 12
-        versionName = "1.1.1"
+        versionCode = 1
+        versionName = "1.0.0"
         proguardFiles()
 
     }

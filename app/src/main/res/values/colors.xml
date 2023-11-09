@@ -1,0 +1,4 @@
+<resources>
+    <color name="tab_default_color">@android:color/holo_red_dark</color>
+    <color name="tab_focused_color">@android:color/holo_red_light</color>
+</resources>

@@ -1,4 +1,4 @@
-package shaiws.redalert;
+package com.shaiws.redalert;
 
 import android.content.BroadcastReceiver;
 import android.content.Context

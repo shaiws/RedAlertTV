@@ -179,20 +179,19 @@ class MainActivity : FragmentActivity() {
 
     private fun showOverlayPermissionDialog() {
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.permissinoTitle))
-            .setMessage(
-                getString(R.string.permissionMessage)
-            )
+            .setTitle(getString(R.string.permissionTitle)) // Corrected typo
+            .setMessage(getString(R.string.permissionMessage))
             .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
                 dialog.dismiss()
                 try {
-                    val intent = Intent(
-                        Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                        Uri.parse("package:$packageName")
-                    )
+                    val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName"))
+                    } else {
+                        Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS)
+                    }
                     overlayPermissionLauncher.launch(intent)
                 } catch (e: Exception) {
-                    Log.e("MainActivity", "Error: ${e.message}")
+                    Log.e("MainActivity", "Error requesting overlay permission: ${e.message}")
                 }
             }
             .show()
@@ -224,17 +223,20 @@ class MainActivity : FragmentActivity() {
     private fun checkOverlayPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             AlertDialog.Builder(this)
-                .setTitle(resources.getString(R.string.permissinoTitle))
+                .setTitle(resources.getString(R.string.permissionTitle))
                 .setMessage(
                     resources.getString(R.string.permissionMessage)
                 )
                 .setPositiveButton(resources.getString(R.string.ok)) { dialog, _ ->
                     dialog.dismiss()
                     try {
-                        val intent = Intent(
-                            Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                            Uri.parse("package:$packageName")
-                        )
+                        val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            // For Android Oreo (8.0, API 26) and above
+                            Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName"))
+                        } else {
+                            // Fallback for earlier versions
+                            Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS)
+                        }
                         overlayPermissionLauncher.launch(intent)
                     } catch (e: Exception) {
                         Log.e("MainActivity", "Error: ${e.message}")

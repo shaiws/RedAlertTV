@@ -21,7 +21,7 @@
     <string name="test1">זוהי בדיקה 1</string>
     <string name="test2">זוהי בדיקה 2</string>
     <string name="test3">זוהי בדיקה 3</string>
-    <string name="bestIsToActivePer">ליעילות מיטבית יש לאשר את ההרשאות הנדרשות</string>
+    <string name="bestIsToActivatePermissions">ליעילות מיטבית יש לאשר את ההרשאות הנדרשות</string>
     <string name="permissionTitle">הרשאה להופיע מעל חלונות אחרים</string>
     <string name="permissionMessage">בכדי להציג התראות, האפליקציה דורשת הרשאה להופיע מעל חלונות אחרים. אנא עבור להגדרות המכשיר תחת\n\'אפליקציות\' -> \'גישה מיוחדת לאפליקציה\' -> \'תצוגה מעל אפליקציות אחרות\'\nואשר את ההרשאה.\nלאחר מכן, הפעל את האפליקציה מחדש.</string>
     <string name="ok">אוקי</string>

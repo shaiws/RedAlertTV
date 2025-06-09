@@ -126,7 +126,7 @@ class MainActivity : FragmentActivity() {
                                     getString(R.string.test1),
                                     getString(R.string.test2),
                                     getString(R.string.test3),
-                                    getString(R.string.bestIsToActivePer)
+                                    getString(R.string.bestIsToActivatePermissions)
                                 )
                             )
                         } else {

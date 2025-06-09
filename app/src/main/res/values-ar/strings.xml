@@ -21,7 +21,7 @@
     <string name="test1">هذا هو الاختبار رقم 1</string>
     <string name="test2">هذا هو الاختبار رقم 2</string>
     <string name="test3">هذا هو الاختبار رقم 3</string>
-    <string name="bestIsToActivePer">للحصول على الأداء الأمثل، امنح الأذونات اللازمة</string>
+    <string name="bestIsToActivatePermissions">للحصول على الأداء الأمثل، امنح الأذونات اللازمة</string>
     <string name="permissionTitle">الإذن بالظهور فوق النوافذ الأخرى</string>
     <string name="permissionMessage">لكي يتم عرض الإشعارات، يتطلب التطبيق إذنًا للظهور فوق النوافذ الأخرى. يرجى الانتقال إلى إعدادات الجهاز ضمن\n\'التطبيقات\' -> \'الوصول إلى التطبيقات الخاصة\' -> \'العرض فوق التطبيقات الأخرى\'\nوتأكيد الإذن.\nبعد ذلك، أعد تشغيل التطبيق.</string>
     <string name="ok">حسنًا</string>

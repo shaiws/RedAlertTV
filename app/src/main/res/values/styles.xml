@@ -1,0 +1,26 @@
+<resources>
+    <style name="StatusText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+    <style name="TitleText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="DrawerText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+    <style name="StatusCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/mid_gray</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+</resources>

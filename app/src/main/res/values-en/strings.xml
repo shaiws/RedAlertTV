@@ -28,4 +28,5 @@
     <string name="batteryTitle">Permission for battery optimizations</string>
     <string name="batteryMessage">In order to receive real-time notifications, the app requires permission to ignore battery optimizations. Please go to device settings under\n\'Apps\' -> \'Special App Access\' -> \'Energy Optimization\'\nand turn off the option.\nAfter that, restart the app.</string>
     <string name="defTitle">Firing rockets and missiles</string>
+    <string name="toggleService">Enable alerts</string>
 </resources>

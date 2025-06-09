@@ -1,10 +1,10 @@
 <resources>
-
-    <style name="Theme.RedAlert" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Set fullscreen mode -->
+    <style name="Theme.RedAlert" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
-
-
+        <item name="colorPrimary">@android:color/holo_red_dark</item>
+        <item name="colorPrimaryVariant">@android:color/holo_red_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/mid_gray</item>
+        <item name="colorBackground">@color/dark_gray</item>
     </style>
-
 </resources>

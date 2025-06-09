@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:elevation="5dp"
-    >
+    android:elevation="5dp">
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="0dp"
+        style="@style/TitleText"
         android:background="@drawable/title_gradient_background"
         android:drawableStart="@drawable/icon"
         android:drawablePadding="8dp"
-        android:focusable="false"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titleTextView"
-        android:layout_marginStart="40dp"
-        android:focusable="false"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

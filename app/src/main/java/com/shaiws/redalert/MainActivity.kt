@@ -24,6 +24,7 @@ import android.widget.LinearLayout
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.shaiws.redalert.databinding.ActivityMainBinding
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -36,6 +37,10 @@ class MainActivity : FragmentActivity() {
 
     private var isServiceBound = false
     private val overlayPermissionRequestCode = 0
+
+    private lateinit var binding: ActivityMainBinding
+
+    private lateinit var serviceToggle: com.google.android.material.switchmaterial.SwitchMaterial
 
     private var listDisplayed = false
     private var listDisplayDuration = 0L
@@ -61,10 +66,19 @@ class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initializeOverlayPermissionLauncher()
         setupTabMenu()
+        serviceToggle = binding.serviceToggle
+        serviceToggle.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                checkOverlayPermission()
+            } else {
+                stopOverlayService()
+            }
+        }
         handleIncomingIntent()
     }
 
@@ -79,14 +93,14 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun setupTabMenu() {
-        tabLayout = findViewById(R.id.tabLayout)
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navView = findViewById(R.id.nav_view)
+        tabLayout = binding.tabLayout
+        drawerLayout = binding.drawerLayout
+        navView = binding.navView
 
         val savedLanguage = getSavedLanguage()
         setLocale(this, savedLanguage)
 
-        val languageRadioGroup: RadioGroup = findViewById(R.id.languageRadioGroup)
+        val languageRadioGroup: RadioGroup = binding.languageRadioGroup
         // Set the saved language as checked without triggering setOnCheckedChangeListener
         val radioId = when (savedLanguage) {
             "he" -> R.id.radioHebrew
@@ -278,12 +292,17 @@ class MainActivity : FragmentActivity() {
         }
     }
 
+    private fun stopOverlayService() {
+        val serviceIntent = Intent(this, OverlayService::class.java)
+        stopService(serviceIntent)
+    }
+
     private fun displayListInApp(title: String?, items: List<String>?) {
-        val titleTextView: TextView = findViewById(R.id.titleTextView)
-        val linearLayout: LinearLayout = findViewById(R.id.linearLayout)
-        val serviceStatus: TextView = findViewById(R.id.serviceStatus)
-        val overlayPermissionStatus: TextView = findViewById(R.id.overlayPermissionStatus)
-        val batteryOptimizationStatus: TextView = findViewById(R.id.batteryOptimizationStatus)
+        val titleTextView: TextView = binding.titleTextView
+        val linearLayout: LinearLayout = binding.linearLayout
+        val serviceStatus: TextView = binding.serviceStatus
+        val overlayPermissionStatus: TextView = binding.overlayPermissionStatus
+        val batteryOptimizationStatus: TextView = binding.batteryOptimizationStatus
         if (items.isNullOrEmpty()) {
             titleTextView.visibility = View.GONE
             linearLayout.visibility = View.GONE
@@ -384,17 +403,17 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun updateStatuses() {
-        findViewById<TextView>(R.id.serviceStatus).text =
+        binding.serviceStatus.text =
             if (isServiceRunning(OverlayService::class.java))
                 getString(R.string.activeService)
             else
                 getString(R.string.deactiveService)
 
-        findViewById<TextView>(R.id.overlayPermissionStatus).apply {
+        binding.overlayPermissionStatus.apply {
             text =
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this@MainActivity))
                     context.getString(R.string.grantedPermissions)
-                
+
                 else
                     context.getString(R.string.grantedPermissions)
         }
@@ -403,13 +422,14 @@ class MainActivity : FragmentActivity() {
         val isIgnoringBatteryOptimizations =
             powerManager.isIgnoringBatteryOptimizations(packageName)
 
-        findViewById<TextView>(R.id.batteryOptimizationStatus).apply {
+        binding.batteryOptimizationStatus.apply {
             text = if (isIgnoringBatteryOptimizations)
                 context.getString(R.string.deactiveBattery)
             else
                 context.getString(R.string.activeBattery)
 
         }
+        serviceToggle.isChecked = isServiceRunning(OverlayService::class.java)
     }
 
     override fun onPause() {

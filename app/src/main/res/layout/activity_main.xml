@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E2E2E"
+    android:background="@color/dark_gray"
     android:nextFocusLeft="@string/statusTab"
     android:nextFocusRight="@string/statusTab"
     android:nextFocusUp="@string/statusTab"
@@ -22,12 +22,11 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_dark"
-            app:tabIndicatorColor="#FFFFFF"
-            app:tabTextColor="#FFFFFF"
-            app:tabSelectedTextColor="#000000"
-            app:tabBackground="@drawable/tab_background_selector"
-            >
+            android:background="?attr/colorPrimary"
+            app:tabIndicatorColor="@color/white"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/black"
+            app:tabBackground="@drawable/tab_background_selector">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabStatus"
@@ -49,90 +48,79 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#424242"
+            android:background="@color/mid_gray"
             android:padding="16dp">
 
             <TextView
                 android:id="@+id/titleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="40dp"
+                style="@style/TitleText"
                 android:background="@drawable/title_gradient_background"
                 android:drawableStart="@drawable/icon"
                 android:drawablePadding="8dp"
-                android:elevation="4dp"
-                android:focusable="false"
-                android:gravity="center"
-                android:padding="10dp"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-
-                android:textStyle="bold"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/titleTextView"
-                android:layout_marginStart="40dp"
-                android:elevation="4dp"
-                android:focusable="false"
                 android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/titleTextView"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView"
+                android:visibility="visible" />
 
-                android:visibility="visible">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/serviceStatusCard"
+                style="@style/StatusCard"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/serviceStatus"
+                    style="@style/StatusText"
+                    android:text="@string/serviceTesting" />
+            </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/overlayPermissionCard"
+                style="@style/StatusCard"
+                app:layout_constraintTop_toBottomOf="@id/serviceStatusCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/overlayPermissionStatus"
+                    style="@style/StatusText"
+                    android:text="@string/permissionTesting" />
+            </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/batteryOptimizationCard"
+                style="@style/StatusCard"
+                app:layout_constraintTop_toBottomOf="@id/overlayPermissionCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/batteryOptimizationStatus"
+                    style="@style/StatusText"
+                    android:text="@string/batteryTesting" />
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/serviceStatus"
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/serviceToggle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:elevation="4dp"
-                android:focusable="false"
-                android:padding="12dp"
-                android:text="@string/serviceTesting"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:text="@string/toggleService"
+                app:layout_constraintTop_toBottomOf="@id/batteryOptimizationCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/overlayPermissionStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/serviceStatus"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:elevation="4dp"
-                android:focusable="false"
-                android:padding="12dp"
-                android:text="@string/permissionTesting"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/batteryOptimizationStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/overlayPermissionStatus"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:elevation="4dp"
-                android:focusable="false"
-                android:padding="12dp"
-                android:text="@string/batteryTesting"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -140,20 +128,16 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FF5722"
+        android:background="@color/drawer_orange"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Drawer Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="@string/langSelect"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            style="@style/DrawerText"
+            android:text="@string/langSelect" />
 
-        <!-- Language Options -->
         <RadioGroup
             android:id="@+id/languageRadioGroup"
             android:layout_width="match_parent"
@@ -166,30 +150,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="עברית"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white"
+                android:buttonTint="@color/radio_button_selector" />
 
             <RadioButton
                 android:id="@+id/radioEnglish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="English"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white"
+                android:buttonTint="@color/radio_button_selector" />
 
             <RadioButton
                 android:id="@+id/radioRussian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Русский"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white"
+                android:buttonTint="@color/radio_button_selector" />
 
             <RadioButton
                 android:id="@+id/radioArabic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="العربية"
-                android:textColor="#FFFFFF" />
-
-
+                android:textColor="@color/white"
+                android:buttonTint="@color/radio_button_selector" />
 
         </RadioGroup>
 

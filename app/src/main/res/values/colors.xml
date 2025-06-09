@@ -1,4 +1,11 @@
 <resources>
     <color name="tab_default_color">@android:color/holo_red_dark</color>
     <color name="tab_focused_color">@android:color/holo_red_light</color>
+    <color name="dark_gray">#2E2E2E</color>
+    <color name="mid_gray">#424242</color>
+    <color name="drawer_orange">#FF5722</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="radio_checked">#FFFFFF</color>
+    <color name="radio_unchecked">#B0B0B0</color>
 </resources>

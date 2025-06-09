@@ -28,12 +28,15 @@ import org.json.JSONException
 import org.json.JSONObject
 import com.shaiws.redalert.BuildConfig
 import java.io.IOException
+import com.shaiws.redalert.databinding.OverlayLayoutBinding
 
 class OverlayService : Service() {
     private val client = OkHttpClient()
     private var items = listOf<String>()
     private var tmpItems = listOf<String>()
     private var modalTitle: String? = null
+
+    private lateinit var binding: OverlayLayoutBinding
 
     private lateinit var windowManager: WindowManager
     private lateinit var overlayView: View
@@ -55,8 +58,8 @@ class OverlayService : Service() {
         startForegroundService()
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
 
-        val layoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        overlayView = layoutInflater.inflate(R.layout.overlay_layout, null)
+        binding = OverlayLayoutBinding.inflate(LayoutInflater.from(this))
+        overlayView = binding.root
 
         val params = WindowManager.LayoutParams(
             WindowManager.LayoutParams.MATCH_PARENT,
@@ -68,18 +71,17 @@ class OverlayService : Service() {
         params.gravity = Gravity.RIGHT or Gravity.TOP
 
 
-        val linearLayout = overlayView.findViewById<LinearLayout>(R.id.linearLayout)
-        scheduleApiCall(params, linearLayout)
+        scheduleApiCall(params)
     }
 
-    private fun scheduleApiCall(params: WindowManager.LayoutParams, linearLayout: LinearLayout) {
+    private fun scheduleApiCall(params: WindowManager.LayoutParams) {
         handler.postDelayed(object : Runnable {
             override fun run() {
                 fetchItems {
                     Log.d("OverlayService", "Fetching items")
                     if (items.isNotEmpty() && items != tmpItems) {
                         tmpItems = items
-                        displayOrUpdateOverlay(params, linearLayout)
+                        displayOrUpdateOverlay(params)
                     }
                 }
                 overlayDisplayDuration += 1000L
@@ -89,13 +91,13 @@ class OverlayService : Service() {
     }
 
     private fun displayOrUpdateOverlay(
-        params: WindowManager.LayoutParams,
-        linearLayout: LinearLayout
+        params: WindowManager.LayoutParams
     ) {
         Log.d("OverlayService", "Checking overlay permission")
         if (Settings.canDrawOverlays(this)) {
+            val linearLayout = binding.linearLayout
             linearLayout.removeAllViews()
-            val titleTextView = overlayView.findViewById<TextView>(R.id.titleTextView)
+            val titleTextView = binding.titleTextView
             titleTextView.text = modalTitle ?: "ירי רקטות וטילים"
             titleTextView.measure(0, 0)  // Measure titleTextView after setting text
             titleTextView.viewTreeObserver.addOnGlobalLayoutListener(object :
@@ -285,8 +287,7 @@ class OverlayService : Service() {
                     PixelFormat.TRANSLUCENT
                 )
                 params.gravity = Gravity.RIGHT or Gravity.TOP
-                val linearLayout = overlayView.findViewById<LinearLayout>(R.id.linearLayout)
-                displayOrUpdateOverlay(params, linearLayout)
+                displayOrUpdateOverlay(params)
             }
 
             else -> {

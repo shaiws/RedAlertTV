@@ -8,6 +8,7 @@ android {
     compileSdk = 34
     buildFeatures {
         buildConfig = true
+        viewBinding = true
     }
     defaultConfig {
         applicationId = "com.shaiws.redalert"

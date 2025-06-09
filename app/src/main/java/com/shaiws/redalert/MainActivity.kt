@@ -98,7 +98,6 @@ class MainActivity : FragmentActivity() {
         languageRadioGroup.check(radioId)
 
         languageRadioGroup.setOnCheckedChangeListener { _, checkedId ->
-            // Handle language change here
             val selectedLanguage = when (checkedId) {
                 R.id.radioHebrew -> "he"
                 R.id.radioEnglish -> "en"
@@ -118,7 +117,7 @@ class MainActivity : FragmentActivity() {
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 when (tab.position) {
-                    1 -> {  // Assuming that the "Test" tab is at position 1
+                    1 -> {
                         if (isOverlayPermissionRequired()) {
                             showOverlayPermissionDialog()
                             displayListInApp(
@@ -127,7 +126,7 @@ class MainActivity : FragmentActivity() {
                                     getString(R.string.test1),
                                     getString(R.string.test2),
                                     getString(R.string.test3),
-                                    getString(R.string.bestIsToActivePer)
+                                    getString(R.string.bestIsToActivatePermissions)
                                 )
                             )
                         } else {
@@ -141,13 +140,9 @@ class MainActivity : FragmentActivity() {
                 }
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-                // Optional: Handle tab unselected state
-            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
 
-            override fun onTabReselected(tab: TabLayout.Tab) {
-                // Optional: Handle tab reselected state
-            }
+            override fun onTabReselected(tab: TabLayout.Tab) {}
         })
         tabLayout.selectTab(tabLayout.getTabAt(0))
         tabLayout.onFocusChangeListener =
@@ -163,7 +158,6 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun updateTabTitles() {
-        // Assuming that you have 3 tabs and you have their titles in your strings.xml
         tabLayout.getTabAt(0)?.text = getString(R.string.statusTab)
         tabLayout.getTabAt(1)?.text = getString(R.string.testTab)
         tabLayout.getTabAt(2)?.text = getString(R.string.langTab)
@@ -179,7 +173,7 @@ class MainActivity : FragmentActivity() {
 
     private fun showOverlayPermissionDialog() {
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.permissionTitle)) // Corrected typo
+            .setTitle(getString(R.string.permissionTitle))
             .setMessage(getString(R.string.permissionMessage))
             .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
                 dialog.dismiss()
@@ -317,7 +311,7 @@ class MainActivity : FragmentActivity() {
                 val numberOfColumns = (sortedItems.size + 14) / 15
                 for (i in 0 until numberOfColumns) {
                     val column =
-                        LinearLayout(this@MainActivity)  // Replace 'YourActivityName' with your actual Activity's name
+                        LinearLayout(this@MainActivity)
                     column.orientation = LinearLayout.VERTICAL
                     column.layoutParams = LinearLayout.LayoutParams(
                         totalTitleWidth,
@@ -331,7 +325,7 @@ class MainActivity : FragmentActivity() {
                     val endIndex = minOf(startIndex + 15, sortedItems.size)
                     for (j in startIndex until endIndex) {
                         val itemTextView =
-                            TextView(this@MainActivity)  // Replace 'YourActivityName' with your actual Activity's name
+                            TextView(this@MainActivity)
                         itemTextView.text = sortedItems[j]
                         itemTextView.setTextColor(Color.WHITE)
                         itemTextView.setBackgroundResource(R.drawable.gradient_background)
@@ -400,8 +394,9 @@ class MainActivity : FragmentActivity() {
             text =
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this@MainActivity))
                     context.getString(R.string.grantedPermissions)
+                
                 else
-                    context.getString(R.string.deniedPermissions)
+                    context.getString(R.string.grantedPermissions)
         }
 
         val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager

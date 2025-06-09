@@ -9,14 +9,14 @@
     <string name="langSelect">Choose language</string>
     <string name="activeService">Service status: active</string>
     <string name="deactiveService">Service status: inactive</string>
-    <string name="grantedPermissions">Permission to appear above apps: disabled</string>
+    <string name="grantedPermissions">Permission to appear above apps: enabled</string>
     <string name="deactiveBattery">Energy optimization: disabled</string>
     <string name="activeBattery">Power consumption optimization: enabled</string>
     <string name="serviceActive">The service is active</string>
     <string name="serviceDeactive">The service is inactive</string>
     <string name="overlayGranted">Permission to appear on top of other windows has been granted</string>
     <string name="overlayDenied">Permission to appear on top of other windows has not been granted</string>
-    <string name="deniedPermissions">Permission to appear above apps: enabled</string>
+    <string name="deniedPermissions">Permission to appear above apps: disabled</string>
     <string name="thisIsATest">This is a test</string>
     <string name="test1">This is test number 1</string>
     <string name="test2">This is test number 2</string>

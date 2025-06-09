@@ -9,14 +9,14 @@
     <string name="langSelect">اختر اللغة</string>
     <string name="activeService">حالة الخدمة: نشطة</string>
     <string name="deactiveService">حالة الخدمة: غير نشطة</string>
-    <string name="grantedPermissions">إذن الظهور فوق التطبيقات: معطل</string>
+    <string name="grantedPermissions">إذن الظهور فوق التطبيقات: ممكّن</string>
     <string name="deactiveBattery">تحسين الطاقة: معطل</string>
     <string name="activeBattery">تحسين استهلاك الطاقة: ممكّن</string>
     <string name="serviceActive">الخدمة نشطة</string>
     <string name="serviceDeactive">الخدمة غير نشطة</string>
     <string name="overlayGranted">تم منح الإذن بالظهور فوق النوافذ الأخرى</string>
     <string name="overlayDenied">لم يتم منح الإذن بالظهور فوق النوافذ الأخرى</string>
-    <string name="deniedPermissions">إذن الظهور فوق التطبيقات: ممكّن</string>
+    <string name="deniedPermissions">إذن الظهور فوق التطبيقات: معطل</string>
     <string name="thisIsATest">هذا اختبار</string>
     <string name="test1">هذا هو الاختبار رقم 1</string>
     <string name="test2">هذا هو الاختبار رقم 2</string>

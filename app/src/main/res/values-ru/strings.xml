@@ -9,14 +9,14 @@
     <string name="langSelect">Выберите язык</string>
     <string name="activeService">Статус услуги: Активный</string>
     <string name="deactiveService">Статус услуги: неактивен</string>
-    <string name="grantedPermissions">Разрешение появляться над приложениями: не включено</string>
+    <string name="grantedPermissions">Разрешение появляться над приложениями: включено</string>
     <string name="deactiveBattery">Оптимизация энергопотребления: не включено</string>
     <string name="activeBattery">Оптимизация энергопотребления: включено</string>
     <string name="serviceActive">Услуга активна</string>
     <string name="serviceDeactive">Услуга не активна</string>
     <string name="overlayGranted">Разрешение на показ поверх других окон предоставлено.</string>
     <string name="overlayDenied">Разрешение на появление поверх других окон не предоставлено.</string>
-    <string name="deniedPermissions">Разрешение появляться над приложениями: включено.</string>
+    <string name="deniedPermissions">Разрешение появляться над приложениями: не включено</string>
     <string name="thisIsATest">Это тест</string>
     <string name="test1">Это тест №1</string>
     <string name="test2">Это тест №2</string>

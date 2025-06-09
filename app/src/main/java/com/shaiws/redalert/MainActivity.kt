@@ -398,7 +398,7 @@ class MainActivity : FragmentActivity() {
 
         findViewById<TextView>(R.id.overlayPermissionStatus).apply {
             text =
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this@MainActivity))
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this@MainActivity))
                     context.getString(R.string.grantedPermissions)
                 else
                     context.getString(R.string.deniedPermissions)

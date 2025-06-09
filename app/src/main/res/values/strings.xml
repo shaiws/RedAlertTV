@@ -9,14 +9,14 @@
     <string name="langSelect">בחר שפה</string>
     <string name="activeService">מצב השירות: פעיל</string>
     <string name="deactiveService">מצב השירות: לא פעיל</string>
-    <string name="grantedPermissions">הרשאה להופיע מעל אפליקציות: לא מופעלת</string>
+    <string name="grantedPermissions">הרשאה להופיע מעל אפליקציות: מופעלת</string>
     <string name="deactiveBattery">אופטימיזציה של צריכת אנרגיה: לא מופעלת</string>
     <string name="activeBattery">אופטימיזציה של צריכת אנרגיה: מופעלת</string>
     <string name="serviceActive">השירות פעיל</string>
     <string name="serviceDeactive">השירות לא פעיל</string>
     <string name="overlayGranted">הרשאה להופיע מעל חלונות אחרים ניתנה</string>
     <string name="overlayDenied">הרשאה להופיע מעל חלונות אחרים לא ניתנה</string>
-    <string name="deniedPermissions">הרשאה להופיע מעל אפליקציות: מופעלת</string>
+    <string name="deniedPermissions">הרשאה להופיע מעל אפליקציות: לא מופעלת</string>
     <string name="thisIsATest">זוהי בדיקה</string>
     <string name="test1">זוהי בדיקה 1</string>
     <string name="test2">זוהי בדיקה 2</string>

@@ -399,9 +399,9 @@ class MainActivity : FragmentActivity() {
         findViewById<TextView>(R.id.overlayPermissionStatus).apply {
             text =
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this@MainActivity))
-                    context.getString(R.string.grantedPermissions)
-                else
                     context.getString(R.string.deniedPermissions)
+                else
+                    context.getString(R.string.grantedPermissions)
         }
 
         val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager

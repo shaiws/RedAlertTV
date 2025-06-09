@@ -21,7 +21,7 @@
     <string name="test1">This is test number 1</string>
     <string name="test2">This is test number 2</string>
     <string name="test3">This is test number 3</string>
-    <string name="bestIsToActivePer">For optimal performance, grant the necessary permissions</string>
+    <string name="bestIsToActivatePermissions">For optimal performance, grant the necessary permissions</string>
     <string name="permissionTitle">Permission to appear on top of other windows</string>
     <string name="permissionMessage">In order to display notifications, the app requires permission to appear on top of other windows. Please go to device settings under\n\'Apps\' -> \'Special app access\' -> \'Display above other apps\'\nand confirm the permission.\nAfter that, restart the app.</string>
     <string name="ok">Ok</string>

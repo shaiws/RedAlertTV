@@ -1,0 +1,25 @@
+name: red_alert_tv
+description: Tzeva Adom (Red Alert) notifications for Android TV with map visualization
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  http: ^1.1.0
+  provider: ^6.1.1
+  shared_preferences: ^2.2.2
+  google_maps_flutter: ^2.5.0
+  geocoding: ^2.1.1
+  intl: ^0.18.1
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/
